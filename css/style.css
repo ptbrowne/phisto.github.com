@@ -1,0 +1,13 @@
+@font-face {
+    font-family: Yanone; 
+    src: url('YanoneKaffeesatz-Regular.otf');
+}
+
+h1 {
+    font-family:Yanone;
+}
+
+body {
+    width:600px;
+    margin:auto;
+}
