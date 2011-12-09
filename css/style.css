@@ -13,7 +13,7 @@ body {
 }
 
 #frise {
-    background:url("../images/pattern.png")
+    background:url("../images/pattern.png");
     width:300px;
     height:20px;
 }
