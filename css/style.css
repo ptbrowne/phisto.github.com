@@ -3,8 +3,9 @@
     src: url('YanoneKaffeesatz-Regular.otf');
 }
 
-h1 {
+h1, h2 {
     font-family:Yanone;
+    margin-bottom:16px;
 }
 
 body {
@@ -15,5 +16,10 @@ body {
 #frise {
     background:url("../images/pattern.png");
     width:300px;
-    height:20px;
+    height:16px;
+}
+
+#content {
+    margin-top:30px;
+    font-family: 'Droid Sans', sans-serif;
 }
