@@ -1,0 +1,10 @@
+---
+layout: post
+title: manger
+---
+
+# titre 1
+## titre 2
+
+* liste1
+* liste2
