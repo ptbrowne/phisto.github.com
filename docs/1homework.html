@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>1homework.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id="background"></div>
+<div id='container'>
+  
+  <div class='section'>
+    <div class='docs'><h1>1homework.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <h4>First Homework : NLP with Python</h4>
+<h4>Due 22 FEB 2012</h4>
+<h4>Chapter1</h4>
+<h4>Exercises 4, 19, 20, 22, 24, 26</h4>
+<h4>Your turn p6 p8 p24</h4>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">nltk.book</span> <span class="kn">import</span> <span class="o">*</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">write_doc</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+        <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">fn</span><span class="o">.</span><span class="n">__doc__</span><span class="p">)</span>  
+        <span class="n">fn</span><span class="p">()</span>
+        <span class="k">print</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">*</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">wrapper</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <h2>ex4</h2>
+<p>Review Section 1.1 on computing with language. How many words are there in
+text2? How many distinct words are there?</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@write_doc</span>
+<span class="k">def</span> <span class="nf">ex4</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <p>number of words in text2</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">print</span> <span class="s">&quot;number of words in text 2 : </span><span class="si">%i</span><span class="s">&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>number of distinct words</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">print</span> <span class="s">&quot;number of distinct words in text2 : </span><span class="si">%i</span><span class="s">&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">text2</span><span class="p">))</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <h2>ex19</h2>
+<p>What is the difference between the following two lines? Which one will give a
+larger value? Will this be the case for other texts?</p>
+<pre><code>sorted(set([w.lower() for w in text1]))
+sorted([w.lower() for w in set(text1)])
+</code></pre>
+<p>In the first line we first transform all the words to lowercase then remove
+ the duplicates.</p>
+<p>In the second line we remove the duplicates and then transform to lowercase
+ the first line will give less results</p>
+<p>examples :</p>
+<pre><code>input = ["a","A","b","C","a","b","B","A"]
+&gt; sorted(set([w.lower() for w in a]))
+["a","b"]
+&gt; sorted([w.lower() for w in set(a)])
+["a", "b", "A", "B"]
+</code></pre>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@write_doc</span>
+<span class="k">def</span> <span class="nf">ex19</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">pass</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <h2>ex20</h2>
+<p>What is the difference between the following two tests: w.isupper() and not
+w.islower()?</p>
+<ul>
+<li>
+<p><code>isupper</code> will check if the word is uppercase 
+  it will return true if there are letters in the string
+  and they are all uppercase </p>
+<pre><code>&gt; "2".isupper()
+False
+</code></pre>
+</li>
+<li>
+<p><code>not islower</code> will return True even if the string doesn't contain 
+  letters</p>
+<pre><code>&gt; not "2".islower()
+True
+</code></pre>
+</li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@write_doc</span>
+<span class="k">def</span> <span class="nf">ex20</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">pass</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      <h2>ex22</h2>
+<p>Find all the four-letter words in the Chat Corpus (text5). With the help of a
+frequency distribution (FreqDist), show these words in decreasing order of fre-
+quency</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@write_doc</span>    
+<span class="k">def</span> <span class="nf">ex22</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">four_letter_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">text5</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">]</span>
+    <span class="n">freq_dist</span> <span class="o">=</span> <span class="n">FreqDist</span><span class="p">(</span><span class="n">four_letter_words</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      <p>we don't need to sort because the FreqDist() already is sorted by frequency</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">print</span> <span class="s">&quot;frequency of four letter words in text5&quot;</span>
+    <span class="k">print</span> <span class="n">freq_dist</span><span class="o">.</span><span class="n">keys</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      <h2>ex24</h2>
+<p>Write expressions for finding all words in text6 that meet the following conditions
+The result should be in the form of a list of words: ['word1', 'word2', ...].</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@write_doc</span>
+<span class="k">def</span> <span class="nf">ex24</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      <p>a. Ending in ize</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">print</span> <span class="s">&quot;words finishing in &#39;&#39;ize&#39;&#39; in </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">text6</span>
+    <span class="k">print</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">text6</span> <span class="k">if</span> <span class="n">w</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">&quot;ize&quot;</span><span class="p">)]</span>
+    <span class="k">print</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      <p>b. Containing the letter z</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">print</span> <span class="s">&quot;words with a &#39;z&#39; in </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">text6</span>
+    <span class="k">print</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">text6</span> <span class="k">if</span> <span class="s">&quot;z&quot;</span> <span class="ow">in</span> <span class="n">w</span><span class="p">]</span>
+    <span class="k">print</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-17'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      <p>c. Containing the sequence of letters pt</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">print</span> <span class="s">&quot;words with &#39;pt&#39; in </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">text6</span>
+    <span class="k">print</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">text6</span> <span class="k">if</span> <span class="s">&quot;pt&quot;</span> <span class="ow">in</span> <span class="n">w</span><span class="p">]</span>
+    <span class="k">print</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-18'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-18'>#</a>
+      </div>
+      <p>d. All lowercase letters except for an initial capital (i.e., titlecase)</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">print</span> <span class="s">&quot;words that look like titles in </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">text6</span>
+    <span class="k">print</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">text5</span> <span class="k">if</span> <span class="n">w</span><span class="o">.</span><span class="n">istitle</span><span class="p">()][</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+    <span class="k">print</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-19'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-19'>#</a>
+      </div>
+      <h2>ex26</h2>
+<p>What does the following Python code do? sum([len(w) for w in text1]) Can
+you use it to work out the average word length of a text ?</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@write_doc</span>
+<span class="k">def</span> <span class="nf">ex26</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-20'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-20'>#</a>
+      </div>
+      <p>This code computes the sum of the length of all the words in text1</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-21'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-21'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">avg_word_length</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">text</span><span class="p">])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        
+    <span class="k">print</span> <span class="s">&quot;average word length of text1 : </span><span class="si">%i</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">avg_word_length</span><span class="p">(</span><span class="n">text1</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-22'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-22'>#</a>
+      </div>
+      <h2>Your turn p6</h2>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@write_doc</span>
+<span class="k">def</span> <span class="nf">your_turn_p6</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-23'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-23'>#</a>
+      </div>
+      <p>text1: Moby Dick by Herman Melville 1851</p>
+<p>text2: Sense and Sensibility by Jane Austen 1811</p>
+<p>text3: The Book of Genesis</p>
+<p>text4: Inaugural Address Corpus</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    
+    <span class="n">texts</span> <span class="o">=</span> <span class="p">(</span><span class="n">text3</span><span class="p">,</span> <span class="n">text1</span><span class="p">)</span>
+    <span class="n">second_text</span> <span class="o">=</span> <span class="n">text1</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="s">&quot;god&quot;</span>
+    <span class="k">print</span> <span class="s">&quot;words that are similar to </span><span class="si">%s</span><span class="s"> in </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">texts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">texts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">similar</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&quot;words that are similar to </span><span class="si">%s</span><span class="s"> in </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">texts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">texts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">similar</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+
+    <span class="n">context</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;great&quot;</span><span class="p">,</span> <span class="s">&quot;god&quot;</span><span class="p">]</span>
+    <span class="k">print</span> <span class="s">&quot;common context of </span><span class="si">%s</span><span class="s"> in </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">texts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">texts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">common_contexts</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&quot;common context of </span><span class="si">%s</span><span class="s"> in </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">texts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">texts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">common_contexts</span><span class="p">(</span><span class="n">context</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-24'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-24'>#</a>
+      </div>
+      <h2>Your turn p8</h2>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@write_doc</span>
+<span class="k">def</span> <span class="nf">your_turn_p8</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-25'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-25'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">word</span> <span class="o">=</span> <span class="s">&quot;lol&quot;</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">text5</span>
+    <span class="n">freq_dist</span> <span class="o">=</span> <span class="n">FreqDist</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">len_text</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">lexical_diversity</span> <span class="o">=</span> <span class="n">freq_dist</span><span class="p">[</span><span class="n">word</span><span class="p">]</span><span class="o">/</span><span class="n">len_text</span><span class="o">*</span><span class="mi">100</span>
+
+    <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> appears </span><span class="si">%i</span><span class="s"> times in </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">freq_dist</span><span class="p">[</span><span class="n">word</span><span class="p">],</span> <span class="n">text</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&quot;it represents </span><span class="si">%.2f</span><span class="s"> percent of the total number of words&quot;</span> <span class="o">%</span> <span class="n">lexical_diversity</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-26'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-26'>#</a>
+      </div>
+      <h2>Your turn p24</h2>
+<p><code>sorted([w for w in set(text7) if '-' in w and 'index' in w])</code>
+returns the alphabetically sorted-without duplicates list of words in text7 
+which got a dash in them and index<br />
+</p>
+<p><code>sorted([wd for wd in set(text3) if wd.istitle() and len(wd) &gt; 10])</code>
+returns the alphabetically sorted-duplicates free list of words in text7
+that look like titles and whose length is superior than 10</p>
+<p><code>sorted([w for w in set(sent7) if not w.islower()])</code>
+return the alphabetically sorted-duplicate free list of words in sentence #7
+who are not lowercase</p>
+<p><code>sorted([t for t in set(text2) if 'cie' in t or 'cei' in t])</code>
+returns the alphabetically sorted-duplicate free list of words in text2
+which contains "cie" or "cei"</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@write_doc</span>
+<span class="k">def</span> <span class="nf">your_turn_p24</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div><div class='section' id='section-27'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-27'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    
+<span class="n">ex4</span><span class="p">()</span>  
+<span class="n">ex19</span><span class="p">()</span>
+<span class="n">ex20</span><span class="p">()</span>
+<span class="n">ex22</span><span class="p">()</span>
+<span class="n">ex24</span><span class="p">()</span>
+<span class="n">ex26</span><span class="p">()</span>
+<span class="n">your_turn_p6</span><span class="p">()</span>
+<span class="n">your_turn_p8</span><span class="p">()</span>
+<span class="n">your_turn_p24</span><span class="p">()</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>
